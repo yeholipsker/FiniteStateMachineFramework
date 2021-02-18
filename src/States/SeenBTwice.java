@@ -2,18 +2,17 @@ package States;
 
 import Events.Event;
 
-public class SeenBOnce extends State {
+public class SeenBTwice extends State{
+    private static SeenBTwice seenBTwice = null;
 
-    private static SeenBOnce seenBOnce = null;
-
-    public static SeenBOnce getInstance() {
-        if (seenBOnce == null) {
-            seenBOnce = new SeenBOnce();
+    public static SeenBTwice getInstance() {
+        if (seenBTwice == null) {
+            seenBTwice = new SeenBTwice();
         }
-        return seenBOnce;
+        return seenBTwice;
     }
 
-    private SeenBOnce() {
+    private SeenBTwice() {
     }
 
     @Override
@@ -22,7 +21,7 @@ public class SeenBOnce extends State {
             case TYPE_A:
                 return SeenAOnce.getInstance();
             case TYPE_B:
-                return SeenBTwice.getInstance();
+                return ThreeInRow.getInstance();
             default:
                 return null;
         }

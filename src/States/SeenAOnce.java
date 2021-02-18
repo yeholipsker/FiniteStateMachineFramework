@@ -22,7 +22,7 @@ public class SeenAOnce extends State {
             case TYPE_A:
                 return SeenATwice.getInstance();
             case TYPE_B:
-                return InitialState.getInstance();
+                return SeenBOnce.getInstance();
             default:
                 return null;
         }

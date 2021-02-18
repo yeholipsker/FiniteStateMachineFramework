@@ -19,9 +19,9 @@ public class SeenATwice extends State{
     public State transition(Event event) {
         switch (event.getType()) {
             case TYPE_A:
-                return threeInRow.getInstance();
+                return ThreeInRow.getInstance();
             case TYPE_B:
-                return InitialState.getInstance();
+                return SeenBOnce.getInstance();
             default:
                 return null;
         }

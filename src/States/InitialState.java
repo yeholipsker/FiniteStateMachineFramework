@@ -19,13 +19,13 @@ public class InitialState extends State {
 
     @Override
     public State transition(Event event) {
-        if (event.getType().equals(EventType.TYPE_A)) {
-            return SeenAOnce.getInstance();
+        switch (event.getType()) {
+            case TYPE_A:
+                return SeenAOnce.getInstance();
+            case TYPE_B:
+                return SeenBOnce.getInstance();
+            default:
+                return null;
         }
-
-        if (event.getType().equals(EventType.TYPE_B)) {
-            return SeenBOnce.getInstance();
-        }
-        return null;
     }
 }
