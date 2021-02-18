@@ -1,8 +1,10 @@
 package States;
 
 import Events.Event;
+import Events.TypeBEvent;
+import FiniteStateMachineFramework.State.State;
 
-public class SeenATwice extends State{
+public class SeenATwice extends State {
     private static SeenATwice seenATwice = null;
 
     public static SeenATwice getInstance() {
@@ -26,4 +28,5 @@ public class SeenATwice extends State{
                 return null;
         }
     }
+
 }

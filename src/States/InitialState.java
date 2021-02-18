@@ -1,7 +1,7 @@
 package States;
 
 import Events.Event;
-import Events.EventType;
+import FiniteStateMachineFramework.State.State;
 
 public class InitialState extends State {
 

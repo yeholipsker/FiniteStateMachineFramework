@@ -1,6 +1,7 @@
 package States;
 
 import Events.Event;
+import FiniteStateMachineFramework.State.State;
 
 public class SeenAOnce extends State {
 

@@ -1,8 +1,9 @@
 package States;
 
 import Events.Event;
+import FiniteStateMachineFramework.State.State;
 
-public class SeenBTwice extends State{
+public class SeenBTwice extends State {
     private static SeenBTwice seenBTwice = null;
 
     public static SeenBTwice getInstance() {

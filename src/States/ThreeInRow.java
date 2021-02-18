@@ -1,9 +1,9 @@
 package States;
 
 import Events.Event;
-import Events.EventType;
+import FiniteStateMachineFramework.State.State;
 
-public class ThreeInRow extends State{
+public class ThreeInRow extends State {
     private static ThreeInRow threeInRow = null;
 
     public static ThreeInRow getInstance() {
@@ -14,11 +14,11 @@ public class ThreeInRow extends State{
     }
 
     private ThreeInRow() {
-        System.out.println("Three identical events occurred!");
     }
 
     @Override
     public State transition(Event event) {
-        return this;
+        System.out.println("Three identical events occurred!");
+        return EndlessState.getInstance();
     }
 }
