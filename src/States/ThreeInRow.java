@@ -1,6 +1,6 @@
 package States;
 
-import Events.Event;
+import FiniteStateMachineFramework.Event.Event;
 import FiniteStateMachineFramework.State.State;
 
 public class ThreeInRow extends State {
@@ -14,10 +14,11 @@ public class ThreeInRow extends State {
     }
 
     private ThreeInRow() {
+        this.id = this.getClass().getName();
     }
 
     @Override
-    public State transition(Event event) {
+    public State handle(Event event) {
         System.out.println("Three identical events occurred!");
         return EndlessState.getInstance();
     }

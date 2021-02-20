@@ -1,6 +1,6 @@
 package States;
 
-import Events.Event;
+import FiniteStateMachineFramework.Event.Event;
 import FiniteStateMachineFramework.State.State;
 
 public class EndlessState extends State {
@@ -14,10 +14,11 @@ public class EndlessState extends State {
     }
 
     private EndlessState() {
+        this.id = this.getClass().getName();
     }
 
     @Override
-    public State transition(Event event) {
+    public State handle(Event event) {
         return this;
     }
 }

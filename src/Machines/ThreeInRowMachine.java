@@ -2,12 +2,11 @@ package Machines;
 
 import FiniteStateMachineFramework.Machine.FiniteStateMachine;
 import States.InitialState;
-import States.ThreeInRowStateFactory;
+import States.ThreeInRowStateSerializer;
 
 public class ThreeInRowMachine extends FiniteStateMachine {
     public ThreeInRowMachine() {
-        super();
-        this.stateFactory = new ThreeInRowStateFactory();
-        this.state = InitialState.getInstance();
+        super(InitialState.getInstance(), new ThreeInRowStateSerializer());
+        System.out.println("current state is - " + this.state.getId());
     }
 }

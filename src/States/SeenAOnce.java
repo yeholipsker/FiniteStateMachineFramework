@@ -1,6 +1,8 @@
 package States;
 
-import Events.Event;
+import Events.TypeAEvent;
+import Events.TypeBEvent;
+import FiniteStateMachineFramework.Event.Event;
 import FiniteStateMachineFramework.State.State;
 
 public class SeenAOnce extends State {
@@ -15,17 +17,17 @@ public class SeenAOnce extends State {
     }
 
     private SeenAOnce() {
+        this.id = this.getClass().getName();
     }
 
     @Override
-    public State transition(Event event) {
-        switch (event.getType()) {
-            case TYPE_A:
-                return SeenATwice.getInstance();
-            case TYPE_B:
-                return SeenBOnce.getInstance();
-            default:
-                return null;
+    public State handle(Event event) {
+        if (event.getId().equals(TypeAEvent.class.getName())) {
+            return SeenATwice.getInstance();
         }
+        if (event.getId().equals(TypeBEvent.class.getName())) {
+            return SeenBOnce.getInstance();
+        }
+        return this;
     }
 }

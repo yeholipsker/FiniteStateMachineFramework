@@ -1,4 +1,4 @@
-import Events.Event;
+import FiniteStateMachineFramework.Event.Event;
 import Events.TypeAEvent;
 import Events.TypeBEvent;
 import FiniteStateMachineFramework.Machine.FiniteStateMachine;
@@ -20,7 +20,7 @@ public class TestLoad {
                 event2
         ));
         for (Event event : eventList) {
-            finiteStateMachine.raiseEvent(event);
+            finiteStateMachine.raise(event);
         }
     }
 }

@@ -1,8 +1,14 @@
 package FiniteStateMachineFramework.State;
 
-import Events.Event;
+import FiniteStateMachineFramework.Event.Event;
 
 public abstract class State {
 
-    public abstract State transition(Event event);
+    protected String id;
+
+    public String getId() {
+        return this.id;
+    }
+
+    public abstract State handle(Event event);
 }
