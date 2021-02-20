@@ -8,7 +8,7 @@ and also IStateSerializer interface.
 
 In order to create new finite state machine using this framework, you need to -
   1. extend Event class with the events your machine can interact - initialize id in constructor.
-  2. extend State class with the states your machine can have -  - initialize id in constructor 
+  2. extend State class with the states your machine can have - initialize id in constructor 
      and implement "handle(Event event)" method for returning the next state.
   3. implement IStateSerializer, so the machine can save its state and continue from where
      it left.
