@@ -6,6 +6,12 @@ import FiniteStateMachineFramework.State.State;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * implementation for the IStateSerializer - went on simple approach -
+ * id for the state is the class name(since all of them are singletons),
+ * and serializing it means to save it's id, deserializing will be to
+ * extract the right State from state map by id.
+ */
 public class ThreeInRowStateSerializer implements IStateSerializer {
 
     Map<String, State> states;
@@ -21,11 +27,20 @@ public class ThreeInRowStateSerializer implements IStateSerializer {
         this.states.put(EndlessState.getInstance().getId(), EndlessState.getInstance());
     }
 
+    /**
+     * return id as a way to identify the state
+     * @param state
+     * @return id
+     */
     @Override
     public String serialize(State state) {
         return state.getId();
     }
 
+    /**
+     * @param s
+     * @return the State from state map by id
+     */
     @Override
     public State deserialize(String s) {
         return this.states.get(s);
